@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+// Реализуйте сортировку массива вставками. (массив из целых чисел). 
+int main() {
+ int O;
+ cout << "Такой будет размер массива: ";
+ cin >> O;
+ int* arr = new int[O];
+ int count = 0;
+ for (int i = 0; i < O; i++) //   <--Ввод значений массива 
+  cin >> arr[i];
+ for (int i = 0; i < O; i++) {     // <-- Сортировка массива
+  for (int j = i; j > 0 && arr[j - 1] > arr[j];j--)
+   swap(arr[j - 1], arr[j]);
+ }
+ cout << "Отсортированный массив: ";
+ for (int i = 0; i < O; i++)  // <-- Вывод отсортированного массива
+  cout << arr[i] << " ";
+ cout << endl;
+ system("pause");
+ return 0;
+}
+
+

@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main() 
+{
+ /* Создайте программу, позволяющую находить 
+ в строке подстроку 
+ и заменять её на другую произвольную подстроку 
+ в каждом месте обнаружения. */
+ 
+   string STROCHKA;
+   cout << "Введите строку:\t";
+   cin >> STROCHKA;
+   string Replace;
+   cout << "Введите заменяемую подстроку:\t";
+   cin >> Replace;
+   string replaceWith;
+   cout << "Введите новую подстроку:\t";
+   cin >> replaceWith;
+   size_t pos = 0, cnt = 0;
+   while ((pos =STROCHKA.find(Replace, pos)) != string::npos)
+   {    
+   STROCHKA.replace(pos, Replace.size(), replaceWith);
+    pos += replaceWith.size();
+    cnt++;  // СЧЕТ ЗАМЕН  
+    }
+   cout << STROCHKA << endl << "Количество замен: " << cnt << endl;
+ system("pause"); 
+ return 0;}
+
+
